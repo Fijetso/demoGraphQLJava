@@ -9,18 +9,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Service.GraphQLService;
+import com.example.demo.Service.GraphQLProvider;
 
 import graphql.ExecutionResult;
 
-@RequestMapping("rest/books")
 @RestController
 public class BookController {
 	@Autowired
-	GraphQLService graphQLService;
+	GraphQLProvider graphQLProvider;
 	@PostMapping
 	public ResponseEntity<Object> getAllBooks(@RequestBody String query) {
-		ExecutionResult execute = graphQLService.getGraphQL().execute(query);
+		ExecutionResult execute = graphQLProvider.getGraphQL().execute(query);
 		return new ResponseEntity<Object>(execute, HttpStatus.OK);
 	}
 	@GetMapping
