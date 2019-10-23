@@ -19,7 +19,7 @@ public class BookController {
 	GraphQLProvider graphQLProvider;
 	@PostMapping
 	public ResponseEntity<Object> getAllBooks(@RequestBody String query) {
-		ExecutionResult execute = graphQLProvider.getGraphQL().execute(query);
+		ExecutionResult execute = graphQLProvider.graphQL().execute(query);
 		return new ResponseEntity<Object>(execute, HttpStatus.OK);
 	}
 	@GetMapping

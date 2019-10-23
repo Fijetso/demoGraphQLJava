@@ -51,11 +51,7 @@ public class GraphQLProvider {
                         .dataFetcher("bookById", graphQLDataFetchers.getBookByIdDataFetcher()))
                 .type(newTypeWiring("Book")
                         .dataFetcher("author", graphQLDataFetchers.getAuthorDataFetcher())
-                        // This line is new: we need to register the additional DataFetcher
                         .dataFetcher("pageCount", graphQLDataFetchers.getPageCountDataFetcher()))
                 .build();
-	}
-	public GraphQL getGraphQL() {
-		return graphQL;
 	}
 }
