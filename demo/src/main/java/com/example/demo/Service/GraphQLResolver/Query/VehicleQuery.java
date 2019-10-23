@@ -16,6 +16,7 @@ public class VehicleQuery implements GraphQLQueryResolver {
     private VehicleService vehicleService;
     @Autowired
     private BrandRepository brandRepository;
+    
     public List<Vehicle> getVehicles(final int count) {
         return this.vehicleService.getAllVehicles(count);
     }
