@@ -17,8 +17,9 @@ public class Vehicle{
     private String type;
     @Column(name = "model_code", nullable = false)
     private String modelCode;
-    @Column(name = "brand_name")
-    private String brandName;
+    @ManyToOne
+    @JoinColumn(name="brandId", nullable = false)
+    private Brand brand;
     @Column(name = "launch_date")
     private LocalDate launchDate;
     private transient  String formattedDate;
@@ -47,12 +48,12 @@ public class Vehicle{
 		this.modelCode = modelCode;
 	}
 
-	public String getBrandName() {
-		return brandName;
+	public Brand getBrand() {
+		return brand;
 	}
 
-	public void setBrandName(String brandName) {
-		this.brandName = brandName;
+	public void setBrand(Brand brand) {
+		this.brand = brand;
 	}
 
 	public LocalDate getLaunchDate() {
