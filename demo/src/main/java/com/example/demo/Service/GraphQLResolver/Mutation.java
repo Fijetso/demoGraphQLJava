@@ -1,4 +1,4 @@
-package com.example.demo.Service.GraphQLResolver.Mutation;
+package com.example.demo.Service.GraphQLResolver;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.example.demo.Model.Vehicle;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 @Component
-public class VehicleMutation implements GraphQLMutationResolver {
+public class Mutation implements GraphQLMutationResolver {
     @Autowired
     private VehicleService vehicleService;
     public Vehicle createVehicle(final String type, final String modelCode, final int brandId, final String launchDate) {
